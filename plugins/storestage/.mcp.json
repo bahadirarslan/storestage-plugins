@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "storestage": {
+      "type": "http",
+      "url": "https://mcp.storestage.studio/mcp"
+    }
+  }
+}

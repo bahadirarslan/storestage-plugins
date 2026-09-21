@@ -1,0 +1,16 @@
+{
+  "name": "storestage-plugins",
+  "description": "Official StoreStage plugins for AI-assisted App Store screenshot workflows.",
+  "owner": {
+    "name": "StoreStage"
+  },
+  "plugins": [
+    {
+      "name": "storestage",
+      "description": "Connect Claude Code to StoreStage Remote MCP.",
+      "version": "0.1.0",
+      "source": "./plugins/storestage",
+      "category": "Productivity"
+    }
+  ]
+}

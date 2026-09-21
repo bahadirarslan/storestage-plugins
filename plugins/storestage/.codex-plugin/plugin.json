@@ -1,0 +1,44 @@
+{
+  "name": "storestage",
+  "version": "0.1.0",
+  "description": "Connect Codex to StoreStage Remote MCP for structured App Store screenshot project workflows.",
+  "author": {
+    "name": "StoreStage",
+    "url": "https://storestage.studio"
+  },
+  "homepage": "https://storestage.studio/mcp-guide",
+  "repository": "https://github.com/bahadirarslan/storestage-plugins",
+  "keywords": [
+    "app-store",
+    "screenshots",
+    "aso",
+    "mcp",
+    "storestage"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "StoreStage",
+    "shortDescription": "Create and manage App Store screenshots",
+    "longDescription": "Connect to StoreStage Remote MCP with OAuth to inspect themes and cloud projects, stage reviewable screenshot changes, manage assets, render previews, and export App Store-ready artwork.",
+    "developerName": "StoreStage",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://storestage.studio",
+    "privacyPolicyURL": "https://storestage.studio/privacy",
+    "termsOfServiceURL": "https://storestage.studio/terms",
+    "defaultPrompt": [
+      "Create an App Store screenshot project from my brief.",
+      "Review my StoreStage project and suggest improvements.",
+      "Render and export my approved screenshot set."
+    ],
+    "brandColor": "#2563EB",
+    "composerIcon": "./assets/storestage-symbol.png",
+    "logo": "./assets/storestage-app-icon-light.png",
+    "logoDark": "./assets/storestage-app-icon-dark.png"
+  }
+}
