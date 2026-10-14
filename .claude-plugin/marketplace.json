@@ -8,7 +8,7 @@
     {
       "name": "storestage",
       "description": "Connect Claude Code to StoreStage Remote MCP.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": "./plugins/storestage",
       "category": "Productivity"
     }

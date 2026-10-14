@@ -1,6 +1,6 @@
 {
   "name": "storestage",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Connect Claude Code to StoreStage Remote MCP for structured App Store screenshot project workflows.",
   "author": {
     "name": "StoreStage",
