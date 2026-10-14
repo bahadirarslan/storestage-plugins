@@ -1,6 +1,6 @@
 ---
 name: storestage-workflows
-description: Use StoreStage Remote MCP to create, inspect, edit, localize, render, export, and upload to App Store Connect App Store screenshot projects. Use when the user asks to work with StoreStage, App Store screenshot sets, StoreStage themes, or StoreStage cloud projects.
+description: Use StoreStage Remote MCP to create, inspect, edit, localize, render, and export App Store screenshot projects, and to upload them to App Store Connect. Use when the user asks to work with StoreStage, App Store screenshot sets, StoreStage themes, or StoreStage cloud projects.
 ---
 
 # StoreStage workflows
@@ -21,10 +21,10 @@ Use the `storestage` MCP server. It is a remote HTTP server protected by OAuth; 
 - For edits, call `changes.preview`, summarize the returned diff, and call `changes.apply` only after the user has approved the staged change or explicitly requested the complete edit.
 - For localization, use `sets.translate`, review the staged translation diff, then apply the returned change set.
 - To change the copy of several outputs, send one `updateOutputCopy` operation with `index` as a list (`[0, 1, 2]`) or `"all"` instead of one operation per output. Each output still counts against the 30-operation limit; `"all"` skips outputs the patch cannot change and lists them in a warning.
-- Check a theme's `kind` (`themes.search`, `themes.get`, `sets.list`). In a `connected` theme the panels form one continuous strip, so a copy or layer change on one panel can unbalance its neighbours: read the `connected_strip_rhythm` warning in the preview and keep the rhythm. Panels of a `panel` theme are independent.
+- Check a theme's layout kind: `kind` in `themes.search` and `themes.get`, `themeKind` in `sets.list`. In a `connected` theme the panels form one continuous strip, so a copy or layer change on one panel can unbalance its neighbours: read the `connected_strip_rhythm` warning in the preview and keep the rhythm. Panels of a `panel` theme are independent.
 - For assets, request a signed upload target with `assets.create_upload`, then attach the uploaded asset to the intended slot with `assets.attach`. Do not put file bytes or base64 in MCP tool arguments.
 - For previews and exports, start the asynchronous job, poll its matching `get` tool until it reaches a terminal state, and use `exports.download` only after a successful export.
-- To send a finished set to App Store Connect, work in this order: `app_store_connect.get_status` (are credentials configured?), `app_store_connect.list_apps` (find the app, an editable version, and the localization), `exports.create` and poll `exports.get` for the set, then `app_store_connect.upload_screenshots`. These tools need the `storestage:app_store_connect` scope, which a client may not have been granted; uploading also needs the export scope.
+- To send a finished set to App Store Connect, work in this order: `app_store_connect.get_status` (are credentials configured?), `app_store_connect.list_apps` (find the app, an editable version, and the localization), `exports.create` and poll `exports.get` until the job succeeds, then `app_store_connect.upload_screenshots` with that job's `jobId`. Only a succeeded, clean (not watermarked) export can be uploaded, the target version must be editable, and an approval cannot outlive its export: if the export is about to expire, export again. These tools need the `storestage:app_store_connect` scope, which a client may not have been granted; uploading also needs the export scope.
 
 ## Preserve user intent
 
