@@ -12,6 +12,8 @@ This package connects Codex and Claude Code to the hosted StoreStage Remote MCP 
 
 The MCP server uses OAuth 2.1 with PKCE and Dynamic Client Registration. Authentication happens in the browser; users do not need to create or paste a client ID or API token.
 
+Install from the public marketplace with `claude plugin install storestage --marketplace bahadirarslan/storestage-plugins`.
+
 ## Requirements
 
 - A StoreStage account with the entitlement required by the requested operation

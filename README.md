@@ -37,4 +37,10 @@ Start a new Claude Code session after installation. Open `/mcp` if the browser a
 
 See the [StoreStage MCP Guide](https://storestage.studio/mcp-guide) for setup and usage details.
 
+## Package versions
+
+This public repository is the source of truth for the Codex and Claude Code plugin. The `plugins/storestage/` directory in the private application repository is an older packaging snapshot; do not copy it over this package. Remote MCP tools are discovered from the server, so server changes do not require a plugin release unless the bundled workflow guidance or manifests need to change.
+
+For a plugin release, update the shared workflow skill here and keep the Codex manifest, Claude Code manifest, and Claude marketplace versions equal. Refresh installed plugins through each client to receive the new skill; an existing session may need to be restarted.
+
 Copyright © StoreStage. All rights reserved.

@@ -1,6 +1,6 @@
 {
   "name": "storestage",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Connect Claude Code to StoreStage Remote MCP for structured App Store screenshot project workflows.",
   "author": {
     "name": "StoreStage",
@@ -8,6 +8,8 @@
   },
   "homepage": "https://storestage.studio/mcp-guide",
   "repository": "https://github.com/bahadirarslan/storestage-plugins",
+  "icon": "./assets/storestage-app-icon-light.png",
+  "privacyPolicyUrl": "https://storestage.studio/privacy",
   "license": "UNLICENSED",
   "keywords": [
     "app-store",
